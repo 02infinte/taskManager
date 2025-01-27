@@ -37,8 +37,9 @@ taskContainer.addEventListener("click",function(e){
     e.target.parentElement.remove();
     saveData();
   }
-  else if(e.target.tagName === 'img'){
-    taskTitle.value=e.target.innerHTML;
+  else if(e.target.tagName === 'IMG'){
+    const taskItem = e.target.closest('LI');
+    taskTitle.value = taskItem.textContent.replace('\u00d7', '').trim();
   }
 },false);
 
